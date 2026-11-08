@@ -1,0 +1,11 @@
+{
+    "name": "Material",
+    "alias": "material",
+    "description": "Modul Materi Pembelajaran (CRUD synchronous + upload file)",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Material\\Providers\\MaterialServiceProvider"
+    ],
+    "files": []
+}

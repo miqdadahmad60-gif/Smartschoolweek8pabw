@@ -1,0 +1,11 @@
+{
+    "name": "Facility",
+    "alias": "facility",
+    "description": "Modul Pengajuan Fasilitas (CRUD AJAX + upload surat/bukti)",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Facility\\Providers\\FacilityServiceProvider"
+    ],
+    "files": []
+}

@@ -1,0 +1,2 @@
+@extends('layout')
+@section('content')<main class="portal-content"><h1>Hasil: {{ $quiz->title }}</h1><section class="data-panel">@forelse($results as $r)<div class="data-row"><span>{{ $r->student_name }} · {{ $r->student_code }}</span><span>{{ $r->correct_answers }}/{{ $r->total_questions }} benar</span><b>{{ $r->score }}</b><span>{{ $r->submitted_at }}</span></div>@empty<p>Belum ada siswa mengerjakan kuis ini.</p>@endforelse</section></main>@endsection

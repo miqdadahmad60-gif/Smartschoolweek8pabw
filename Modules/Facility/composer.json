@@ -1,0 +1,16 @@
+{
+    "name": "nwidart/facility",
+    "description": "Modul Pengajuan Fasilitas Smart School Kupang",
+    "authors": [],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Facility\\": "app/"
+        }
+    }
+}

@@ -1,0 +1,42 @@
+PANDUAN TUGAS CRUD DENGAN UPLOAD FILE - SMART SCHOOL KUPANG
+
+Objek CRUD: Materi Pembelajaran (unggah materi oleh guru).
+
+ROUTE:
+- GET /materials                : daftar materi
+- GET /materials/create         : form tambah (guru)
+- POST /materials               : simpan materi + file (guru)
+- GET /materials/{id}           : detail materi
+- GET /materials/{id}/edit      : form edit (guru pemilik)
+- PUT /materials/{id}           : update materi/file (guru pemilik)
+- DELETE /materials/{id}        : hapus data + file (guru pemilik)
+- GET /materials/{id}/download  : unduh file
+
+DATABASE:
+Tabel `materials` sudah tersedia dari migration utama. Kolom yang menyimpan bukti upload:
+- file_name: path file pada disk public, contoh materials/contoh.pdf
+- original_name: nama asli file
+- file_type: ekstensi file
+- file_size: ukuran file dalam byte
+
+LOKASI FILE:
+File disimpan di storage/app/public/materials.
+Agar dapat diakses dari browser, jalankan:
+php artisan storage:link
+Link publiknya adalah public/storage -> storage/app/public.
+
+VALIDASI:
+Format yang diterima: jpg, jpeg, png, pdf, doc, docx, ppt, pptx, xls, xlsx, txt, zip.
+Ukuran maksimal 10 MB. File wajib saat menambah materi; saat edit file boleh dikosongkan jika tidak ingin mengganti.
+
+CARA DEMO:
+1. Login sebagai guru.
+2. Buka /materials lalu tambah materi dan unggah dokumen/gambar.
+3. Tunjukkan baris tabel materials di phpMyAdmin, khususnya file_name, original_name, file_type, file_size.
+4. Tunjukkan file yang tersimpan di storage/app/public/materials.
+5. Tunjukkan detail/unduh.
+6. Edit materi dan ganti file, perlihatkan file lama hilang dari folder.
+7. Hapus materi, perlihatkan baris tabel dan file ikut hilang.
+
+AUTENTIKASI:
+Semua route materials berada di dalam middleware auth. Hanya guru dapat CRUD. Siswa dan guru dapat melihat/mengunduh file setelah login.

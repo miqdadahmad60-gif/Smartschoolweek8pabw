@@ -1,0 +1,16 @@
+{
+    "name": "nwidart/material",
+    "description": "Modul Materi Pembelajaran Smart School Kupang",
+    "authors": [],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Material\\": "app/"
+        }
+    }
+}
